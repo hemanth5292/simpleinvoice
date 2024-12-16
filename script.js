@@ -39,6 +39,7 @@ function addItem() {
 }
 
 function generatePDF() {
+    // Using jsPDF to generate PDF
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
