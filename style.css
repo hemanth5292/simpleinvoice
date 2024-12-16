@@ -12,7 +12,7 @@ header {
     font-size: 24px;
 }
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,16 +27,18 @@ header {
     margin-bottom: 5px;
     font-weight: bold;
 }
-.form-group input, .form-group textarea {
+.form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.form-group textarea {
-    resize: vertical;
+.table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: 8px;
 }
-.btn {
+button {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -44,6 +46,6 @@ header {
     border-radius: 4px;
     cursor: pointer;
 }
-.btn:hover {
+button:hover {
     background-color: #45a049;
 }
