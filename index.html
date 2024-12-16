@@ -12,22 +12,68 @@
     </header>
     <div class="container">
         <form id="invoiceForm">
+            <!-- Bill From Section -->
+            <div class="form-group">
+                <label for="billFrom">Bill From</label>
+                <input type="text" id="billFrom" name="billFrom" required>
+            </div>
+
+            <!-- Bill To Section -->
+            <div class="form-group">
+                <label for="billTo">Bill To</label>
+                <input type="text" id="billTo" name="billTo" required>
+            </div>
+
+            <!-- Invoice Details -->
             <div class="form-group">
                 <label for="invoiceNumber">Invoice Number</label>
                 <input type="text" id="invoiceNumber" name="invoiceNumber" required>
             </div>
+
             <div class="form-group">
-                <label for="customerName">Customer Name</label>
-                <input type="text" id="customerName" name="customerName" required>
+                <label for="invoiceDate">Invoice Date</label>
+                <input type="date" id="invoiceDate" name="invoiceDate" required>
             </div>
+
+            <!-- Items Section -->
+            <h3>Items</h3>
+            <table id="itemsTable">
+                <thead>
+                    <tr>
+                        <th>Sl. No</th>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Taxable Amount</th>
+                        <th>Tax %</th>
+                        <th>Tax Amount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" class="slNumber" value="1" readonly /></td>
+                        <td><input type="text" class="itemName" /></td>
+                        <td><input type="text" class="description" /></td>
+                        <td><input type="number" class="rate" onchange="calculateTotal()" /></td>
+                        <td><input type="number" class="quantity" onchange="calculateTotal()" /></td>
+                        <td><input type="number" class="taxableAmount" readonly /></td>
+                        <td><input type="number" class="taxPercentage" onchange="calculateTotal()" /></td>
+                        <td><input type="number" class="taxAmount" readonly /></td>
+                        <td><input type="number" class="totalAmount" readonly /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" onclick="addItem()">Add Item</button>
+
+            <!-- Seal and Sign -->
             <div class="form-group">
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" name="amount" required>
+                <label for="sealSign">Seal and Sign:</label>
+                <input type="checkbox" id="sealSign" name="sealSign" />
             </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="4"></textarea>
-            </div>
+
+            <!-- Generate PDF Button -->
             <button type="button" class="btn" onclick="generatePDF()">Generate PDF</button>
         </form>
     </div>
